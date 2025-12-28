@@ -53,7 +53,7 @@ export default function Footer() {
 					href="/"
 					className="text-2xl font-bold tracking-wide text-text"
 				>
-					YearlyChallenge
+					YearlyGo
 				</Link>
 
 				{/* Right: Meta + Theme toggle */}
@@ -61,10 +61,10 @@ export default function Footer() {
 					{/* Meta shifted slightly left */}
 					<div className="flex flex-col items-end text-sm leading-tight mr-2">
 						<div className="text-text-subtle">
-							© {new Date().getFullYear()} YearlyChallenge
+							© {new Date().getFullYear()} YearlyGo
 						</div>
 						<a
-							href="https://github.com/joshu-git/PingElo"
+							href="https://github.com/joshu-git/YearlyGo"
 							target="_blank"
 							rel="noopener noreferrer"
 							className="text-accent hover:text-accent-hover"
