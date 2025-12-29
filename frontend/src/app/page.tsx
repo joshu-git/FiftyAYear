@@ -43,7 +43,7 @@ export default function HomePage() {
 			{/* HERO */}
 			<section className="text-center space-y-4 md:space-y-6">
 				<h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
-					Group Driven Challenges
+					Group Challenges
 				</h1>
 
 				<p className="text-lg max-w-2xl mx-auto">
