@@ -47,14 +47,8 @@ export default function SignIn() {
 	return (
 		<main className="max-w-5xl mx-auto px-4 py-16 space-y-16">
 			{/* HERO */}
-			<section
-				aria-labelledby="signin-heading"
-				className="text-center space-y-4"
-			>
-				<h1
-					id="signin-heading"
-					className="text-4xl md:text-5xl font-extrabold tracking-tight"
-				>
+			<section className="text-center space-y-4">
+				<h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
 					Sign in to Yearly Go
 				</h1>
 				<p className="text-lg max-w-2xl mx-auto">
@@ -85,10 +79,8 @@ export default function SignIn() {
 							onChange={(e) => setEmail(e.target.value)}
 							className="
 								w-full rounded-lg px-4 py-3
-								bg-card
-								border border-border
-								text-text
-								placeholder:text-text-muted
+								bg-card border border-border
+								text-text placeholder:text-text-muted
 								focus-visible:outline-none
 								focus-visible:ring-2
 								focus-visible:ring-border
@@ -113,16 +105,24 @@ export default function SignIn() {
 							onChange={(e) => setPassword(e.target.value)}
 							className="
 								w-full rounded-lg px-4 py-3
-								bg-card
-								border border-border
-								text-text
-								placeholder:text-text-muted
+								bg-card border border-border
+								text-text placeholder:text-text-muted
 								focus-visible:outline-none
 								focus-visible:ring-2
 								focus-visible:ring-border
 							"
 							placeholder="••••••••"
 						/>
+					</div>
+
+					{/* Forgot password */}
+					<div className="text-right">
+						<Link
+							href="/account/recover"
+							className="text-sm text-text-muted hover:underline"
+						>
+							Forgot your password?
+						</Link>
 					</div>
 
 					<button
