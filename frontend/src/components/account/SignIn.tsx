@@ -116,7 +116,7 @@ export default function SignIn() {
 					</div>
 
 					{/* Forgot password */}
-					<div className="text-centre">
+					<div className="w-full flex justify-center">
 						<Link
 							href="/account/recover"
 							className="text-sm text-text-muted hover:underline"
