@@ -30,15 +30,15 @@ export default function SignIn() {
 		const userId = data.user.id;
 
 		const { data: player } = await supabase
-			.from("players")
-			.select("username")
-			.eq("user_id", userId)
+			.from("participants")
+			.select("participant_name")
+			.eq("account_id", userId)
 			.maybeSingle();
 
 		setLoading(false);
 
-		if (player && player.username) {
-			router.push(`/profile/${player.username}`);
+		if (player && player.participant_name) {
+			router.push(`/profile/${player.participant_name}`);
 		} else {
 			router.push("/account/claim");
 		}
@@ -116,7 +116,7 @@ export default function SignIn() {
 					</div>
 
 					{/* Forgot password */}
-					<div className="text-right">
+					<div className="text-centre">
 						<Link
 							href="/account/recover"
 							className="text-sm text-text-muted hover:underline"
