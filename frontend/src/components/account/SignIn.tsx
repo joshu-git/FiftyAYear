@@ -45,11 +45,17 @@ export default function SignIn() {
 	}
 
 	return (
-		<div className="max-w-5xl mx-auto px-4 py-16 space-y-16">
+		<main className="max-w-5xl mx-auto px-4 py-16 space-y-16">
 			{/* HERO */}
-			<section className="text-center space-y-4">
-				<h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
-					Sign in to Yearly Challenge
+			<section
+				aria-labelledby="signin-heading"
+				className="text-center space-y-4"
+			>
+				<h1
+					id="signin-heading"
+					className="text-4xl md:text-5xl font-extrabold tracking-tight"
+				>
+					Sign in to Yearly Go
 				</h1>
 				<p className="text-lg max-w-2xl mx-auto">
 					Continue tracking your yearly goals and group progress.
@@ -58,42 +64,62 @@ export default function SignIn() {
 
 			{/* FORM */}
 			<section className="max-w-2xl mx-auto space-y-8">
-				<form onSubmit={signIn} className="space-y-6">
+				<form
+					onSubmit={signIn}
+					aria-busy={loading}
+					className="space-y-6"
+				>
 					<div className="space-y-2">
-						<label className="block text-sm font-medium">
-							Email
+						<label
+							htmlFor="email"
+							className="block text-sm font-medium"
+						>
+							Email address
 						</label>
 						<input
+							id="email"
 							type="email"
+							autoComplete="email"
+							required
 							value={email}
 							onChange={(e) => setEmail(e.target.value)}
-							required
 							className="
 								w-full rounded-lg px-4 py-3
 								bg-card
 								border border-border
 								text-text
 								placeholder:text-text-muted
+								focus-visible:outline-none
+								focus-visible:ring-2
+								focus-visible:ring-border
 							"
 							placeholder="you@example.com"
 						/>
 					</div>
 
 					<div className="space-y-2">
-						<label className="block text-sm font-medium">
+						<label
+							htmlFor="password"
+							className="block text-sm font-medium"
+						>
 							Password
 						</label>
 						<input
+							id="password"
 							type="password"
+							autoComplete="current-password"
+							required
 							value={password}
 							onChange={(e) => setPassword(e.target.value)}
-							required
 							className="
 								w-full rounded-lg px-4 py-3
 								bg-card
 								border border-border
 								text-text
 								placeholder:text-text-muted
+								focus-visible:outline-none
+								focus-visible:ring-2
+								focus-visible:ring-border
 							"
 							placeholder="••••••••"
 						/>
@@ -102,17 +128,19 @@ export default function SignIn() {
 					<button
 						type="submit"
 						disabled={loading}
-						className="w-full px-4 py-3 rounded-lg"
+						className="
+							w-full px-4 py-3 rounded-lg
+							disabled:opacity-60
+							disabled:cursor-not-allowed
+						"
 					>
-						{loading ? "Signing in..." : "Sign In"}
+						{loading ? "Signing in…" : "Sign In"}
 					</button>
 				</form>
 
 				{/* SECONDARY CTA */}
 				<div className="text-center space-y-3">
-					<p className="text-sm text-text-muted">
-						New to Yearly Challenge?
-					</p>
+					<p className="text-sm text-text-muted">New to Yearly Go?</p>
 					<Link href="/account/signup">
 						<button className="px-4 py-2 rounded-lg">
 							Create an account
@@ -120,6 +148,6 @@ export default function SignIn() {
 					</Link>
 				</div>
 			</section>
-		</div>
+		</main>
 	);
 }
