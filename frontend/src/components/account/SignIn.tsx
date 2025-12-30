@@ -49,65 +49,76 @@ export default function SignIn() {
 			{/* HERO */}
 			<section className="text-center space-y-4">
 				<h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
-					Sign In
+					Sign in to Yearly Challenge
 				</h1>
 				<p className="text-lg max-w-2xl mx-auto">
-					Access your account to join groups and track your yearly
-					challenges.
+					Continue tracking your yearly goals and group progress.
 				</p>
 			</section>
 
 			{/* FORM */}
-			<section className="bg-card p-10 max-w-2xl mx-auto space-y-6">
-				<form onSubmit={signIn} className="space-y-5">
-					<div className="space-y-1">
-						<label className="text-sm font-medium">Email</label>
+			<section className="max-w-2xl mx-auto space-y-8">
+				<form onSubmit={signIn} className="space-y-6">
+					<div className="space-y-2">
+						<label className="block text-sm font-medium">
+							Email
+						</label>
 						<input
 							type="email"
 							value={email}
 							onChange={(e) => setEmail(e.target.value)}
 							required
 							className="
-								w-full rounded-lg px-3 py-2
-								bg-background
+								w-full rounded-lg px-4 py-3
+								bg-card
 								border border-border
+								text-text
+								placeholder:text-text-muted
 							"
+							placeholder="you@example.com"
 						/>
 					</div>
 
-					<div className="space-y-1">
-						<label className="text-sm font-medium">Password</label>
+					<div className="space-y-2">
+						<label className="block text-sm font-medium">
+							Password
+						</label>
 						<input
 							type="password"
 							value={password}
 							onChange={(e) => setPassword(e.target.value)}
 							required
 							className="
-								w-full rounded-lg px-3 py-2
-								bg-background
+								w-full rounded-lg px-4 py-3
+								bg-card
 								border border-border
+								text-text
+								placeholder:text-text-muted
 							"
+							placeholder="••••••••"
 						/>
 					</div>
 
 					<button
 						type="submit"
 						disabled={loading}
-						className="w-full px-4 py-2 rounded-lg"
+						className="w-full px-4 py-3 rounded-lg"
 					>
-						{loading ? "Signing In..." : "Sign In"}
+						{loading ? "Signing in..." : "Sign In"}
 					</button>
 				</form>
 
-				<div className="text-center text-sm text-text-muted">
-					Don’t have an account?
+				{/* SECONDARY CTA */}
+				<div className="text-center space-y-3">
+					<p className="text-sm text-text-muted">
+						New to Yearly Challenge?
+					</p>
+					<Link href="/account/signup">
+						<button className="px-4 py-2 rounded-lg">
+							Create an account
+						</button>
+					</Link>
 				</div>
-
-				<Link href="/account/signup">
-					<button className="w-full px-4 py-2 rounded-lg">
-						Create Account
-					</button>
-				</Link>
 			</section>
 		</div>
 	);
